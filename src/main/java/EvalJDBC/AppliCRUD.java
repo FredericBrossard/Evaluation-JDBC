@@ -139,9 +139,9 @@ public class AppliCRUD {
 		
 		//Exploite le Resultat, soit charge la clef primaire de de Categorie dans la clef externe de Aliment via l'objet cat
 		if (rs.next()) {
-	//		System.out.println(rs.getString(1));
-	//		System.out.println(rs.getLong(2));
 			
+	//		System.out.println(rs.getString(1));
+	//		System.out.println(rs.getLong(2));		
 			cat.id_categories= rs.getLong(2); 
 		}			
 	}
