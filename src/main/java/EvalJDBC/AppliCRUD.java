@@ -137,12 +137,13 @@ public class AppliCRUD {
 		// 4 Récupère le résultat en tant qu'objet ResultSet.
 		ResultSet rs = stmt.getResultSet();	
 		
-		//Exploite le Resultat
+		//Exploite le Resultat, soit charge la clef primaire de de Categorie dans la clef externe de Aliment via l'objet cat
 		if (rs.next()) {
-			System.out.println("Select Cat recupe clef");
-			System.out.println(rs.getString(1));
-			System.out.println(rs.getInt(2));
-		//	cat.id_categories= rs.getInt(2); <---- Bug ici de int dans Long
+	//		System.out.println("Select Cat recupe clef");
+	//		System.out.println(rs.getString(1));
+	//		System.out.println(rs.getLong(2));
+			
+			cat.id_categories= rs.getLong(2); 
 		}			
 	}
 
@@ -157,7 +158,6 @@ public class AppliCRUD {
 	}
 
 	private static void showDataBase(Connection c) throws SQLException {
-
 		// 2..creer la requete
 		Statement stmt = c.createStatement();
 		String sqlCmd = "Select * from \"EVALJDBC\".aliment";
