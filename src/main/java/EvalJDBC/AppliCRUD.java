@@ -151,7 +151,7 @@ public class AppliCRUD {
 		Statement stmt = c.createStatement();
 		// 1er paramétre : sqlCmd qui permet de passé une chaine de caratere qui
 		// contient la requete sql
-		String sql = "Delete FROM \"EVALJDBC\".aliment WHERE id_aliment = '" + aliment + "';";
+		String sql = "Delete FROM \"EVALJDBC\".aliment WHERE name = '" + aliment + "';";
 		// 3..executer requette
 		stmt.executeUpdate(sql);
 	}
