@@ -145,7 +145,7 @@ public class AppliCRUD {
 			cat.id_categories= rs.getLong(2); 
 		}			
 	}
-
+  
 	private static void deleteDataBase(Connection c, String aliment) throws SQLException {
 		// 2..creer la requete
 		Statement stmt = c.createStatement();
