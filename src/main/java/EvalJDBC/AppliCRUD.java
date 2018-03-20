@@ -170,8 +170,7 @@ public class AppliCRUD {
 			// pour l'affichage du nom qui fait 250 de long, on affiche pas les espaces de fin....
 			String Str = new String(rset.getString(2));
 			String tmp = "" + rset.getInt(1) + " ; " + Str.trim() + " ; " + rset.getInt(3) + " ; " + rset.getLong(4)
-					+ " ; " + rset.getInt(5) + " ; " + rset.getInt(6) + " ; " + rset.getInt(7)
-					+ "(clef freign pour info et a supprimer) ;";
+					+ " ; " + rset.getInt(5) + " ; " + rset.getInt(6) + ";";
 			System.out.println(tmp);
 		}
 	}
