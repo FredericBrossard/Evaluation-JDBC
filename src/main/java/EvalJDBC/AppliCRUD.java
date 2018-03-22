@@ -20,7 +20,7 @@ public class AppliCRUD {
 	 * "Taux NRJ(kcal)", "Taux Protéines (g/100g)", "Taux Glucides (g/100g)",
 	 * "Taux Lipides (g/100g)" };
 	 */
-
+		
 	public static void main(String[] args) {
 		// Connexion Keys
 		String url = "jdbc:postgresql://horton.elephantsql.com:5432/jpgnovjv";
@@ -29,17 +29,11 @@ public class AppliCRUD {
 
 		String userChoice;
 		Scanner sc = new Scanner(System.in);
-
+		
+		//Appel de méthode pour afficher le sommaire - Exemple de factorisation de coding pour alléger le MAIN					
+		Menutable.afficheMenu();
+		
 		do {
-			// Gestion du sommaire et options proposées à l'utilisateur
-			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			System.out.println("!-----  Hello and Weclome in  'CRUD application'  ------!");
-			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			System.out.println("! 1) Add an aliment in database                         !");
-			System.out.println("! 2) Delete an aliment in database                      !");
-			System.out.println("! 3) Show me all aliment in database                    !");
-			System.out.println("! 0) Quit the 'CRUD Application'. Bye                   !");
-			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			// Récupération de la saisie clavier de l'utilisateur
 			userChoice = sc.nextLine();				
 			
@@ -95,6 +89,7 @@ public class AppliCRUD {
 					break;
 				default:
 					System.out.println("Invalide choice ' " + userChoice + " '. Please restart again. ");
+					break;
 				}
 				// Fermeture de la connection
 				conn.close();
@@ -108,6 +103,7 @@ public class AppliCRUD {
 		sc.close();
 	}
 
+	
 	private static void addDataBase(Connection c, Aliment aliment) throws SQLException {
 		// 2 on créé un objet Statement avec l'objet Connection
 		Statement stmt = c.createStatement();
